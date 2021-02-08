@@ -1,0 +1,26 @@
+---
+# Unsafe Configs <make sure everything is right>
+Serilog:
+  LogOutputPath: #'C:\Backup\log-{Date}.txt' (see serilog)
+  FileLogOutputTemplate: '[{Timestamp:dd.MM.yyyy HH:mm:ss} {Level:u3}] {Message:j}{NewLine}{Exception}'
+  RetainedFileCountLimit: 31
+  ConsoleOutputTemplate: '[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}'
+  LogLevel: 'Information' # Values: Information, Debug, Verbose
+DataProtection:
+  RegistryCurrentUserSubKeyPath: 'SOFTWARE\BackupRepositories\Keys'
+# Validated Configs
+ApplicationConfigurationModel:
+  DevOpsAuthConfigurationModel:
+    EncryptedAzureDevOpsToken: 
+  DevOpsApiConfigurationModel:
+    OrganizationDevOpsUrl:  #bluehands.visualstudio.com
+    OrganizationDevOpsName: #bluehands
+  GitConfigurationModel:
+    LocalBasePath: #C:\Backup
+    RemoteOriginName: remoteorigin
+    FetchRefSpecs: "+refs/*:refs/*"
+  ProjectConfigurationModel:
+    MaxProjectsOffset: 999999
+  PrtgConfigurationModel:
+    PrtgPushServerUri: #http://127.0.0.1:5050
+    BackupRepositoriesPrtgSensorId : #78E4C476-C673-40FA-AF35-4E445ABAF6D1

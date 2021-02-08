@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BackupRepositoriesCore": {
+      "commandName": "Project",
+      "commandLineArgs": "Run-BackupRepositories"
+    }
+  }
+}
